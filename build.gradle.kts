@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.6.20"
+    `maven-publish`
 }
 
 group = "com.github.brezinajn"
@@ -19,13 +20,13 @@ kotlin {
             useJUnitPlatform()
         }
     }
-    js(BOTH) {
-        browser {
-            commonWebpackConfig {
-                cssSupport.enabled = true
-            }
-        }
-    }
+//    js(BOTH) {
+//        browser {
+//            commonWebpackConfig {
+//                cssSupport.enabled = true
+//            }
+//        }
+//    }
     val hostOs = System.getProperty("os.name")
     val isMingwX64 = hostOs.startsWith("Windows")
     val nativeTarget = when {
